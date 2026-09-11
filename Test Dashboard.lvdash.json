@@ -1,0 +1,233 @@
+{
+  "datasets": [
+    {
+      "name": "5281b0c7",
+      "displayName": "Sanofi Request Data Overview September",
+      "queryLines": [
+        "SELECT *\n",
+        "FROM `analytics-dev`.z_sshreyashy.sanofi_request_mp_sep_merged"
+      ]
+    },
+    {
+      "name": "daf0de7c",
+      "displayName": "Unique Vendor Names List",
+      "queryLines": [
+        "SELECT DISTINCT vendor_name\n",
+        "FROM `analytics-dev`.z_sshreyashy.sanofi_request_mp_sep_merged"
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "name": "0c745d78",
+      "displayName": "2026 Raw Data",
+      "layout": [
+        {
+          "widget": {
+            "name": "raw-data",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "5281b0c7",
+                  "fields": [
+                    {
+                      "name": "highest_overall_list_price_any_supplier",
+                      "expression": "`highest_overall_list_price_any_supplier`"
+                    },
+                    {
+                      "name": "list_price",
+                      "expression": "`list_price`"
+                    },
+                    {
+                      "name": "n_1_price",
+                      "expression": "`n_1_price`"
+                    },
+                    {
+                      "name": "paid_price",
+                      "expression": "`paid_price`"
+                    },
+                    {
+                      "name": "product_id",
+                      "expression": "`product_id`"
+                    },
+                    {
+                      "name": "quantity",
+                      "expression": "`quantity`"
+                    },
+                    {
+                      "name": "cart_item_public_id",
+                      "expression": "`cart_item_public_id`"
+                    },
+                    {
+                      "name": "checkout_type",
+                      "expression": "`checkout_type`"
+                    },
+                    {
+                      "name": "country",
+                      "expression": "`country`"
+                    },
+                    {
+                      "name": "manufacturer_name",
+                      "expression": "`manufacturer_name`"
+                    },
+                    {
+                      "name": "order_id",
+                      "expression": "`order_id`"
+                    },
+                    {
+                      "name": "po_number",
+                      "expression": "`po_number`"
+                    },
+                    {
+                      "name": "order_or_cart_item_id",
+                      "expression": "`order_or_cart_item_id`"
+                    },
+                    {
+                      "name": "purchase_type",
+                      "expression": "`purchase_type`"
+                    },
+                    {
+                      "name": "vendor_name",
+                      "expression": "`vendor_name`"
+                    },
+                    {
+                      "name": "purchase_date",
+                      "expression": "`purchase_date`"
+                    }
+                  ],
+                  "disaggregated": true
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": true,
+                "title": {
+                  "value": "2026 Raw Data",
+                  "fields": []
+                }
+              },
+              "version": 2,
+              "widgetType": "table",
+              "encodings": {
+                "columns": [
+                  {
+                    "fieldName": "highest_overall_list_price_any_supplier"
+                  },
+                  {
+                    "fieldName": "list_price"
+                  },
+                  {
+                    "fieldName": "n_1_price"
+                  },
+                  {
+                    "fieldName": "paid_price"
+                  },
+                  {
+                    "fieldName": "product_id"
+                  },
+                  {
+                    "fieldName": "quantity"
+                  },
+                  {
+                    "fieldName": "cart_item_public_id"
+                  },
+                  {
+                    "fieldName": "checkout_type"
+                  },
+                  {
+                    "fieldName": "country"
+                  },
+                  {
+                    "fieldName": "manufacturer_name"
+                  },
+                  {
+                    "fieldName": "order_id"
+                  },
+                  {
+                    "fieldName": "po_number"
+                  },
+                  {
+                    "fieldName": "order_or_cart_item_id"
+                  },
+                  {
+                    "fieldName": "purchase_type"
+                  },
+                  {
+                    "fieldName": "vendor_name"
+                  },
+                  {
+                    "fieldName": "purchase_date"
+                  }
+                ]
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 0,
+            "width": 12,
+            "height": 6
+          }
+        },
+        {
+          "widget": {
+            "name": "unique-vendors",
+            "queries": [
+              {
+                "name": "main_query",
+                "query": {
+                  "datasetName": "daf0de7c",
+                  "fields": [
+                    {
+                      "name": "count(*)",
+                      "expression": "COUNT(`*`)"
+                    }
+                  ],
+                  "disaggregated": false
+                }
+              }
+            ],
+            "spec": {
+              "frame": {
+                "showTitle": true,
+                "title": {
+                  "value": "Unique Vendors",
+                  "fields": []
+                }
+              },
+              "version": 2,
+              "widgetType": "counter",
+              "encodings": {
+                "value": {
+                  "fieldName": "count(*)"
+                }
+              },
+              "data": {
+                "queryName": "main_query"
+              }
+            }
+          },
+          "position": {
+            "x": 0,
+            "y": 7,
+            "width": 6,
+            "height": 6
+          }
+        }
+      ],
+      "pageType": "PAGE_TYPE_CANVAS",
+      "layoutVersion": "GRID_V1"
+    }
+  ],
+  "uiSettings": {
+    "theme": {
+      "widgetHeaderAlignment": "ALIGNMENT_UNSPECIFIED"
+    },
+    "applyModeEnabled": false
+  }
+}
