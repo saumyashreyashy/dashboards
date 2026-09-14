@@ -12,7 +12,7 @@
       "name": "daf0de7c",
       "displayName": "Unique Vendor Names List",
       "queryLines": [
-        "SELECT DISTINCT vendor_name\n",
+        "SELECT DISTINCT manufacturer_name\n",
         "FROM `analytics-dev`.z_sshreyashy.sanofi_request_mp_sep_merged"
       ]
     }
@@ -196,7 +196,7 @@
               "frame": {
                 "showTitle": true,
                 "title": {
-                  "value": "Unique Vendors",
+                  "value": "Unique Manufacturer",
                   "fields": []
                 }
               },
